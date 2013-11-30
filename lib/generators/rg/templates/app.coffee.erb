@@ -1,0 +1,30 @@
+# Dependencies
+angular.module "<%= @name %>.services",    []
+angular.module "<%= @name %>.resources",   []
+angular.module "<%= @name %>.serializers", []
+angular.module "<%= @name %>.controllers", []
+angular.module "<%= @name %>.filters",     []
+angular.module "<%= @name %>.directives",  []
+
+# Initialize App
+<%= @name_var %> = angular.module(
+  "<%= @name %>", [
+    "<%= @name %>.resources",
+    "<%= @name %>.services",
+    "<%= @name %>.directives",
+    "<%= @name %>.filters",
+    "<%= @name %>.controllers",
+    "<%= @name %>.serializers"
+  ]
+)
+
+# Load App Config
+#= require_tree .
+
+# Load Complete App
+#= require_tree ../services
+#= require_tree ../resources
+#= require_tree ../serializers
+#= require_tree ../controllers
+#= require_tree ../filters
+#= require_tree ../directives

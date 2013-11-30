@@ -2,9 +2,11 @@ module Rg
   class InstallGenerator < ::Rails::Generators::Base
     source_root File.expand_path "../templates", __FILE__
     JS_PATH  = 'app/assets/javascripts'
-    APP_PATH = JS_PATH + '/app'
+    APP_PATH = JS_PATH + '/angular'
     desc "Creates a new angular project structure"
 
+    class_option :name, type: :string, default: Rails.application.class.parent_name.sub(/./){ |c| c.downcase},
+      desc: "App name"
     class_option :symlinks, type: :boolean, default: false,
       desc: "Create utility symlinks for working with the angular project"
     class_option :manifests, type: :array, default: [],
@@ -12,27 +14,30 @@ module Rg
     class_option :libraries, type: :array, default: %w[
         angular
         angularjs-rails-resource
-        ./app/app
+        ./angular/app/main
       ],
       desc: "JavaScript libraries/files to load in manifests"
-
-
-    def create_app_coffee
-      say "Creating new app.coffee file"
-      copy_file 'app.coffee', APP_PATH + '/app.coffee'
-    end
 
     def create_directories
       say 'Creating new angular directory structure'
       %w[
-        controllers
-        resources
-        directives
+        app
         services
+        resources
+        serializers
+        controllers
         filters
+        directives
       ].each{ |directory|
         create_file APP_PATH + '/' + directory + '/.keep'
       }
+    end
+
+    def create_app_coffee
+      say "Creating new app/main.coffee file"
+      @name     = options[:name].underscore
+      @name_var = "@" + options[:name]
+      template 'app.coffee.erb', APP_PATH + '/app/main.coffee'
     end
 
     def create_symlinks
