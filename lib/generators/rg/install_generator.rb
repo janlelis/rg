@@ -1,12 +1,9 @@
 module Rg
   class InstallGenerator < ::Rails::Generators::Base
-    source_root File.expand_path "../templates", __FILE__
-    JS_PATH  = 'app/assets/javascripts'
-    APP_PATH = JS_PATH + '/angular'
     desc "Creates a new angular project structure"
+    include Helper
 
-    class_option :name, type: :string, default: Rails.application.class.parent_name.sub(/./){ |c| c.downcase},
-      desc: "App name"
+
     class_option :symlinks, type: :boolean, default: false,
       desc: "Create utility symlinks for working with the angular project"
     class_option :manifests, type: :array, default: [],
@@ -16,7 +13,7 @@ module Rg
         angularjs-rails-resource
         ./angular/app/main
       ],
-      desc: "JavaScript libraries/files to load in manifests"
+      desc: "JavaScript libraries/files to add to manifests"
 
     def create_directories
       say 'Creating new angular directory structure'
@@ -35,8 +32,6 @@ module Rg
 
     def create_app_coffee
       say "Creating new app/main.coffee file"
-      @name     = options[:name].underscore
-      @name_var = "@" + options[:name]
       template 'app.coffee.erb', APP_PATH + '/app/main.coffee'
     end
 

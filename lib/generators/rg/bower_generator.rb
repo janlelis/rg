@@ -4,8 +4,9 @@ module Rg
   class BowerGenerator < ::Rails::Generators::Base
     desc "Generates a new .bowerrc and an iniatial bower.json"
 
-    class_option :name,      type: :string, default: Rails.application.class.parent_name,
-      desc: "Name for the new bower project"
+
+    class_option :name,      type: :string, default: Rg::Helper.railsName,
+      desc: "Name for the new angular project (will be used as angular app name)"
     class_option :directory, type: :string, default: "vendor/assets/bower",
       desc: 'Directory to install your bower components for your .bowerrc'
     class_option :version,   type: :string, default: "0.0.0",

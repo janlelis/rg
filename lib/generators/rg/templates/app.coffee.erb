@@ -1,20 +1,20 @@
 # Dependencies
-angular.module "<%= @name %>.services",    []
-angular.module "<%= @name %>.resources",   []
-angular.module "<%= @name %>.serializers", []
-angular.module "<%= @name %>.controllers", []
-angular.module "<%= @name %>.filters",     []
-angular.module "<%= @name %>.directives",  []
+angular.module "<%= app_name %>.services",    []
+angular.module "<%= app_name %>.resources",   []
+angular.module "<%= app_name %>.serializers", []
+angular.module "<%= app_name %>.controllers", []
+angular.module "<%= app_name %>.filters",     []
+angular.module "<%= app_name %>.directives",  []
 
 # Initialize App
-<%= @name_var %> = angular.module(
-  "<%= @name %>", [
-    "<%= @name %>.resources",
-    "<%= @name %>.services",
-    "<%= @name %>.directives",
-    "<%= @name %>.filters",
-    "<%= @name %>.controllers",
-    "<%= @name %>.serializers"
+@<%= appName %> = angular.module(
+  "<%= app_name %>", [
+    "<%= app_name %>.resources",
+    "<%= app_name %>.services",
+    "<%= app_name %>.directives",
+    "<%= app_name %>.filters",
+    "<%= app_name %>.controllers",
+    "<%= app_name %>.serializers"
   ]
 )
 
