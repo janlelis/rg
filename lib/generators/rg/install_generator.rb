@@ -32,7 +32,7 @@ module Rg
 
     def create_app_coffee
       say "Creating new app/main.coffee file"
-      template 'app.coffee.erb', APP_PATH + '/app/main.coffee'
+      template 'app_main.coffee.erb', APP_PATH + '/app/main.coffee'
     end
 
     def create_symlinks
