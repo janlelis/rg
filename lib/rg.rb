@@ -1,0 +1,5 @@
+require 'rg/version'
+require 'rails'
+require 'coffee-rails'
+require 'sprockets/bower'
+require 'rg/railtie'
