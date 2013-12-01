@@ -5,7 +5,7 @@ module Rg
 
 
     def create_resource
-      template 'resource.coffee.erb', APP_PATH + "/resources/#{file_name}_resource.coffee"
+      template 'resource.coffee.erb', APP_PATH + "/resources/#{file_name}.coffee"
     end
   end
 end
