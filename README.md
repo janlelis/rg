@@ -1,4 +1,4 @@
-# rg (= Rails + Angular, pronounced "Regular")
+# rg (Rails + Angular, pronounced "regular")
 
 Opinionated way to use [AngularJS] in a [Rails]/[Rails-API] app using
 
@@ -12,6 +12,8 @@ By using this gem, you will
 - Get some basic, but handy generators!
 - Delegate Angular/frontend library management to bower
 - Still live in Ruby land (you can do E2E testing using Capybara)
+
+You are invited to read [this blog post] for background information on this mindset, which could also be called the "CARB" stack.
 
 ## Setup
 
@@ -35,9 +37,8 @@ Now check your layout file if it is including the sprockets manifest correctly (
 
 Then start developing and keep in mind that you have the following generators to create new Angular files for you:
 
-## Included Generators
-
 - rg:controller <name>
+- rg:app <name>
 - rg:model <name>
 - rg:view <name>
 - rg:directive <name>
@@ -46,6 +47,8 @@ Then start developing and keep in mind that you have the following generators to
 - rg:filter <name>
 - rg:serializer <name>
 
+The generators only generate very basic file content. While this is intended, there might be --options for power users in the future.
+
 ## License
 
-(c) 2013 Jan Lelis, MIT LICENSE
+(c) 2013 Jan Lelis <janlelis.de>, MIT LICENSE
