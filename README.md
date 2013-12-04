@@ -35,13 +35,16 @@ Alternatively, you can run all the previous commands via rake:
 
 ## Views
 
-This gem does not mandate how you should organize your views. Be sure to only include your manifest [???]
+This gem does not mandate how you should organize your views. Don't forget to:
 
-turbolinks [???]
+- include the JavaScript manifest file (once)
+- include the `ng-app` directive
+- turn off turbolinks
+- turn off `config.assets.debug` in development.rb
 
 ## Generators
 
-Then start developing and keep in mind that you have the following generators to create new Angular files for you:
+You have the following generators to create new Angular files for you:
 
 - rg:service <name>
 - rg:resource <name>
@@ -52,11 +55,12 @@ Then start developing and keep in mind that you have the following generators to
 
 The generators only generate very basic file content. While this is intended, there might be --options for power users in the future.
 
-## TODO (by you?)
+## Todo (by you?)
 - Turbolink support
 - Add scaffold generator
 - Add serializer generator + directory
 - Add capabilities to rg:app to optionally create routing
+- Generate JS Tests
 
 ## Credits
 
