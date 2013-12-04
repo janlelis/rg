@@ -1,20 +1,5 @@
-# Dependencies
-angular.module "<%= app_name %>.services",    []
-angular.module "<%= app_name %>.resources",   []
-angular.module "<%= app_name %>.controllers", []
-angular.module "<%= app_name %>.filters",     []
-angular.module "<%= app_name %>.directives",  []
-
-# Initialize App
-@<%= appName %> = angular.module(
-  "<%= app_name %>", [
-    "<%= app_name %>.resources",
-    "<%= app_name %>.services",
-    "<%= app_name %>.directives",
-    "<%= app_name %>.filters",
-    "<%= app_name %>.controllers",
-  ]
-)
+# Initialize App w/ Dependencies
+#= require_self
 
 # Load App Config
 #= require_tree .
@@ -25,3 +10,7 @@ angular.module "<%= app_name %>.directives",  []
 #= require_tree ../controllers
 #= require_tree ../filters
 #= require_tree ../directives
+
+@<%= appName %> = angular.module '<%= app_name %>', [
+  'rails'
+]

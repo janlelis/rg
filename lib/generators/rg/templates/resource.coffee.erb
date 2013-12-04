@@ -1,3 +1,6 @@
-class <%= file_name.upcase %> extends RailsResource
-  @configure url: '/<%= file_name %>s', name: '<%= file_name %>'
-
+@<%= appName %>.factory '<%= file_name.camelize %>',
+['railsResourceFactory', (railsResourceFactory) ->
+  railsResourceFactory
+    url: '/<%= file_name.pluralize %>'
+    name: '<%= file_name %>'
+]
