@@ -14,6 +14,8 @@ module Rg
         ./angular/app/main
       ],
       desc: "JavaScript libraries/files to add to manifests"
+    class_option :'csrf-token', type: :boolean, default: true,
+      desc: "Create Rails CSRF-Token configuration"
 
     def create_directories
       say 'Creating new angular directory structure'
@@ -32,6 +34,12 @@ module Rg
     def create_app_coffee
       say "Creating new app/main.coffee file"
       template 'app_main.coffee.erb', APP_PATH + '/app/main.coffee'
+    end
+
+    def create_csrf_token_coffee
+      return unless options[:"csrf-token"]
+      say "Creating new app/csrf_token.coffee file"
+      template 'app/csrf_token.coffee.erb', APP_PATH + '/app/csrf_token.coffee'
     end
 
     def create_symlinks

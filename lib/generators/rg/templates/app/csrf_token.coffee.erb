@@ -1,0 +1,7 @@
+@<%= appName %>.config ["$httpProvider", ($httpProvider) ->
+  csrfToken = document.querySelector('meta[name=csrf-token]').content
+  $httpProvider.defaults.headers.post['X-CSRF-Token'] = csrfToken
+  $httpProvider.defaults.headers.put['X-CSRF-Token'] = csrfToken
+  $httpProvider.defaults.headers.patch['X-CSRF-Token'] = csrfToken
+  # $httpProvider.defaults.headers.delete['X-CSRF-Token'] = csrfToken
+]
