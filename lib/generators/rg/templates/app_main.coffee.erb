@@ -1,7 +1,6 @@
 # Dependencies
 angular.module "<%= app_name %>.services",    []
 angular.module "<%= app_name %>.resources",   []
-angular.module "<%= app_name %>.serializers", []
 angular.module "<%= app_name %>.controllers", []
 angular.module "<%= app_name %>.filters",     []
 angular.module "<%= app_name %>.directives",  []
@@ -14,7 +13,6 @@ angular.module "<%= app_name %>.directives",  []
     "<%= app_name %>.directives",
     "<%= app_name %>.filters",
     "<%= app_name %>.controllers",
-    "<%= app_name %>.serializers"
   ]
 )
 
@@ -24,7 +22,6 @@ angular.module "<%= app_name %>.directives",  []
 # Load Complete App
 #= require_tree ../services
 #= require_tree ../resources
-#= require_tree ../serializers
 #= require_tree ../controllers
 #= require_tree ../filters
 #= require_tree ../directives

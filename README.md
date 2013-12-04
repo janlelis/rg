@@ -45,7 +45,6 @@ Then start developing and keep in mind that you have the following generators to
 - rg:service <name>
 - rg:factory <name>
 - rg:filter <name>
-- rg:serializer <name>
 
 The generators only generate very basic file content. While this is intended, there might be --options for power users in the future.
 

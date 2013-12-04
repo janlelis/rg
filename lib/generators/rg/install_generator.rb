@@ -21,7 +21,6 @@ module Rg
         app
         services
         resources
-        serializers
         controllers
         filters
         directives
