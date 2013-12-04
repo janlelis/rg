@@ -31,14 +31,19 @@ module Rg
       }
     end
 
-    def create_app_coffee
-      say "Creating new app/main.coffee file"
-      template 'app_main.coffee.erb', APP_PATH + '/app/main.coffee'
+    def create_main_coffee
+      say "Creating app/main.coffee file"
+      template 'app/main.coffee.erb', APP_PATH + '/app/main.coffee'
+    end
+
+    def create_settings_coffee
+      say "Creating app/settings.coffee file"
+      template 'app/settings.coffee.erb', APP_PATH + '/app/settings.coffee'
     end
 
     def create_csrf_token_coffee
       return unless options[:"csrf-token"]
-      say "Creating new app/csrf_token.coffee file"
+      say "Creating app/csrf_token.coffee file"
       template 'app/csrf_token.coffee.erb', APP_PATH + '/app/csrf_token.coffee'
     end
 

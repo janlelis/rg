@@ -1,6 +1,6 @@
 @<%= appName %>.factory '<%= file_name.camelize %>',
 ['railsResourceFactory', (railsResourceFactory) ->
   railsResourceFactory
-    url: '/<%= file_name.pluralize %>'
+    url: angular.module('<%= app_name %>').settings.rails_url_prefix + '<%= file_name.pluralize %>'
     name: '<%= file_name %>'
 ]
