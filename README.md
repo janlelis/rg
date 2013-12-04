@@ -1,6 +1,6 @@
 # rg (Rails + Angular, pronounced "regular")
 
-Opinionated way to use [AngularJS] in a [Rails]/[Rails-API] app using
+Opinionated way to use [AngularJS](http://angularjs.org) in a [Rails](http://rubyonrails.org)/[Rails-API](https://github.com/rails-api/rails-api) app using
 
 - [CoffeeScript] for code, because it looks good.
 - [Bower] for managing frontend libraries, because it's simple.
@@ -10,10 +10,10 @@ By using this gem, you will
 - Be able to use Angular + Rails
 - Adopt a convention about your Angular directory structure and
 - Get some basic, but handy generators!
-- Delegate Angular/frontend library management to bower
-- Still live in Ruby land (you can do E2E testing using Capybara)
+- Delegate Angular/frontend library management to Bower
+- Still live in Ruby land (i.e. you can do E2E testing using Capybara)
 
-You are invited to read [this blog post] for background information on this mindset, which could also be called the "CARB" stack.
+You are invited to read [this blog post](http://rbjl.net/69) for background information on this mindset, which could be called the *CARB* stack.
 
 ## Setup
 
@@ -33,21 +33,31 @@ Alternatively, you can run all the previous commands via rake:
 
     rake rg:setup
 
-Now check your layout file if it is including the sprockets manifest correctly (application.js). You also might remove turbolinks.
+## Views
+
+This gem does not mandate how you should organize your views. Be sure to only include your manifest [???]
+
+turbolinks [???]
+
+## Generators
 
 Then start developing and keep in mind that you have the following generators to create new Angular files for you:
 
-- rg:controller <name>
-- rg:app <name>
-- rg:model <name>
-- rg:view <name>
-- rg:directive <name>
 - rg:service <name>
-- rg:factory <name>
+- rg:resource <name>
+- rg:controller <name>
 - rg:filter <name>
+- rg:directive <name>
+- rg:app <name>
 
 The generators only generate very basic file content. While this is intended, there might be --options for power users in the future.
 
-## License
+## TODO (by you?)
+- Turbolink support
+- Add scaffold generator
+- Add serializer generator + directory
+- Add capabilities to rg:app to optionally create routing
+
+## Credits
 
 (c) 2013 Jan Lelis <janlelis.de>, MIT LICENSE
