@@ -23,11 +23,12 @@ Make sure [you have bower installed](http://bower.io/#installing-bower). Then ad
 
 Run `bundle` on the command-line and setup your angular project:
 
-    rails g rg:bower  # Set up a new .bowerrc file and bower.json file
-
-    bower install angular angularjs-rails-resource --save  # Use bower to install latest angulars
-
-    rails g rg:install --manifests=application.js  # Set up the angular app directory and add to sprocket manifest
+    # Set up a new .bowerrc file and bower.json file
+    rails g rg:bower
+    # Use bower to install latest angulars
+    bower install angular angularjs-rails-resource --save
+    # Set up the angular app directory and add to sprocket manifest
+    rails g rg:install --manifests=application.js
 
 Alternatively, you can run all the previous commands via rake:
 
@@ -54,7 +55,10 @@ You have the following generators to create new Angular files for you:
 
 The generators only generate very basic file content. While this is intended, there might be --options for power users in the future.
 
-## Todo (by you?)
+## Todo
+
+This gem is not finished, yet. Feel free to contribute:
+
 - Turbolink support
 - Add scaffold generator
 - Add serializer generator + directory
