@@ -37,9 +37,9 @@ Alternatively, you can run all the previous commands via rake:
 
 This gem does not mandate how you should organize your views. Don't forget to:
 
-- include the JavaScript manifest file (once)
-- include the `ng-app` directive
-- turn off turbolinks
+- include the JavaScript manifest file (once) in your HTML
+- include the `ng-app` directive in your HTML
+- turn off turbolinks (remove from manifest file, HTML, Gemfile)
 - turn off `config.assets.debug` in development.rb
 
 ## Generators
