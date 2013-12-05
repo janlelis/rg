@@ -4,8 +4,6 @@ module Rg
     include Helper
 
 
-    class_option :symlinks, type: :boolean, default: false,
-      desc: "Create utility symlinks for working with the angular project"
     class_option :manifests, type: :array, default: [],
       desc: "List sprocket manifests in which angular should be included"
     class_option :libraries, type: :array, default: %w[
@@ -45,13 +43,6 @@ module Rg
       return unless options[:"csrf-token"]
       say "Creating app/csrf_token.coffee file"
       template 'app/csrf_token.coffee.erb', APP_PATH + '/app/csrf_token.coffee'
-    end
-
-    def create_symlinks
-      return unless options[:symlinks]
-      say "Creating symlinks"
-      # create_link APP_PATH + '/views', 'public/html'
-      create_link 'angular', APP_PATH
     end
 
     def inject_into_sprockets
