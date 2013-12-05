@@ -6,15 +6,13 @@ Gem::Specification.new do |gem|
   gem.name          = "rg"
   gem.version       = Rg::VERSION
   gem.summary       = 'rg: rails + angular'
-  gem.summary       = 'A way to integrate AngularJS in a Rails project using CoffeeScript and Bower.'
+  gem.summary       = 'A way to integrate AngularJS into a Rails project using CoffeeScript and Bower.'
   gem.license       = "MIT"
   gem.authors       = ["Jan Lelis"]
   gem.email         = "mail@janlelis.de"
   gem.homepage      = "https://github.com/janlelis/rg"
 
   gem.files         = Dir['{**/}{.*,*}'].select { |path| File.file?(path) }
-  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
-  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ['lib']
 
   gem.add_development_dependency 'bundler', '~> 1.0'
