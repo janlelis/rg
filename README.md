@@ -1,10 +1,10 @@
-# rg: rails + angular
+# Regular: Rails + Angular
 
-(Pronounced: *regular*) Opinionated way to use [AngularJS](http://angularjs.org) in a [Rails](http://rubyonrails.org)/[Rails-API](https://github.com/rails-api/rails-api) app using
+Opinionated way to use [AngularJS](http://angularjs.org) in a [Rails](http://rubyonrails.org)/[Rails-API](https://github.com/rails-api/rails-api) app using
 
-- [CoffeeScript] for code, because it looks good.
-- [Bower] for managing frontend libraries, because it's simple.
-- [angularjs-rails-resource], because why not use it?
+- [CoffeeScript](http://coffeescript.org/) for code, because it looks good.
+- [Bower](http://bower.io) for managing frontend libraries, because it's simple.
+- [angularjs-rails-resource](https://github.com/FineLinePrototyping/angularjs-rails-resource), because why not use it?
 
 By using this gem, you will
 - Be able to use Angular + Rails
@@ -17,11 +17,11 @@ You are invited to read [this blog post](http://ruby.janlelis.de/69-the-carb-sta
 
 ## Setup
 
-Make sure [you have bower installed](https://bower.io). Then add this to your Gemfile:
+Make sure [you have bower installed](http://bower.io/#installing-bower). Then add this to your Gemfile:
 
     gem 'rg'
 
-Run `bundle` on the command-line. Then setup your angular project:
+Run `bundle` on the command-line and setup your angular project:
 
     rails g rg:bower  # Set up a new .bowerrc file and bower.json file
 
