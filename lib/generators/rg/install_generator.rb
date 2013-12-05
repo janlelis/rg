@@ -53,9 +53,9 @@ module Rg
         manifest_path = JS_PATH + '/' + manifest_file
         if File.exists?(manifest_path)
           manifest_data = File.read(manifest_path)
-          options[:libraries].each{ |library|
+          options[:libraries].reverse.each{ |library|
             unless manifest_data =~ /require #{library}( |$)/
-              append_to_manifest manifest_path, library
+              prepend_to_manifest manifest_path, library
             end
           }
         else
@@ -72,9 +72,9 @@ module Rg
       }.join
     end
 
-    def append_to_manifest(manifest_path, libraries)
+    def prepend_to_manifest(manifest_path, libraries)
       say "Injecting #{libraries} into manifest at #{manifest_path}"
-      append_to_file manifest_path, "\n" + manifest_content(
+      prepend_to_file manifest_path, "\n" + manifest_content(
         libraries: libraries,
         ext: File.extname(manifest_path),
       )

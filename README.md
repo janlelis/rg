@@ -1,6 +1,6 @@
-# rg (Rails + Angular, pronounced "regular")
+# rg: rails + angular
 
-Opinionated way to use [AngularJS](http://angularjs.org) in a [Rails](http://rubyonrails.org)/[Rails-API](https://github.com/rails-api/rails-api) app using
+(Pronounced: *regular*) Opinionated way to use [AngularJS](http://angularjs.org) in a [Rails](http://rubyonrails.org)/[Rails-API](https://github.com/rails-api/rails-api) app using
 
 - [CoffeeScript] for code, because it looks good.
 - [Bower] for managing frontend libraries, because it's simple.
@@ -40,7 +40,6 @@ This gem does not mandate how you should organize your views. Don't forget to:
 - include the JavaScript manifest file (once) in your HTML
 - include the `ng-app` directive in your HTML
 - turn off turbolinks (remove from manifest file, HTML, Gemfile)
-- turn off `config.assets.debug` in development.rb
 
 ## Generators
 
