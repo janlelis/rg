@@ -14,6 +14,8 @@ module Rg
       desc: "JavaScript libraries/files to add to manifests"
     class_option :'csrf-token', type: :boolean, default: true,
       desc: "Create Rails CSRF-Token configuration"
+    class_option :'backend-url', type: :string, default: '',
+      desc: "Path to your Rails-API backend"
 
     def create_directories
       say 'Creating new angular directory structure'
@@ -36,6 +38,7 @@ module Rg
 
     def create_settings_coffee
       say "Creating app/settings.coffee file"
+      @backend_url = options[:'backend-url']
       template 'app/settings.coffee.erb', APP_PATH + '/app/settings.coffee'
     end
 
