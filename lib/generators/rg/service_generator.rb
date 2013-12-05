@@ -5,7 +5,7 @@ module Rg
 
 
     def create_service
-      template 'service.coffee.erb', APP_PATH + "/services/#{file_name}_service.coffee"
+      template 'service.coffee.erb', APP_PATH + "/services/#{file_name}.coffee"
     end
   end
 end

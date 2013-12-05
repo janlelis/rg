@@ -7,6 +7,10 @@ module Rg
     APP_PATH = JS_PATH + '/angular'
 
 
+    def camelizeLower(name)
+      name.camelize.sub(/./){ |c| c.downcase }
+    end
+
     def app_name
       @app_name ||= appName.underscore
     end
@@ -16,7 +20,7 @@ module Rg
     end
 
     def railsName
-      Rails.application.class.parent_name.sub(/./){ |c| c.downcase}
+      camelizeLower(Rails.application.class.parent_name)
     end
 
     def bowerName
