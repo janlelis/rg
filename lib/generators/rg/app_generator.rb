@@ -5,7 +5,7 @@ module Rg
 
 
     def create_app_config
-      template 'app_config.coffee.erb', APP_PATH + "/app/#{file_name}.coffee"
+      template 'app/config.coffee.erb', APP_PATH + "/app/#{file_name}.coffee"
     end
   end
 end
