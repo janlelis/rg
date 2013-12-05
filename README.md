@@ -13,7 +13,7 @@ By using this gem, you will
 - Delegate Angular/frontend library management to Bower
 - Still live in Ruby land (i.e. you can do E2E testing using Capybara)
 
-You are invited to read [this blog post](http://rbjl.net/69) for background information on this mindset, which could be called the *CARB* stack.
+You are invited to read [this blog post](http://ruby.janlelis.de/69-the-carb-stack-coffee-angular-rails-bower) for background information on this mindset (*CARB*).
 
 ## Setup
 
