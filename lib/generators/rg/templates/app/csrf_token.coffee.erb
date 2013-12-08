@@ -1,5 +1,5 @@
-if csrfTokenTag = document.querySelector('meta[name=csrf-token]')
-  @<%= appName %>.config ["$httpProvider", ($httpProvider) ->
+@<%= appName %>.config ["$httpProvider", ($httpProvider) ->
+  if csrfTokenTag = document.querySelector('meta[name=csrf-token]')
     angular.forEach ['post', 'put', 'patch', 'delete'], (verb)->
       $httpProvider.defaults.headers[verb] ||= {}
       $httpProvider.defaults.headers[verb]['X-CSRF-Token'] = csrfTokenTag.content
